@@ -9,9 +9,12 @@ def is_number(number):
 
 
 def verify_input(base_ten):
-    # checks if input is number and gives feedback to user
+    # checks if input is number and that it is not negative and gives feedback to user
     if not is_number(base_ten):
         print("Value entered was not a number. Please enter only integer numbers in base 10")
+        return False
+    elif int(base_ten) < 0:
+        print("Value entered is negative. Please enter a positive base 10 integer")
         return False
 
     return True
@@ -138,9 +141,6 @@ def main():
                 print "{: <5} => base {: <2} {:_>30}".format(user_input, "2", convert_to_base(int(user_input), 2))
                 print "{: <5} => base {: <2} {:_>30}".format(user_input, "8", convert_to_base(int(user_input), 8))
                 print "{: <5} => base {: <2} {:_>30}".format(user_input, "16", convert_to_base(int(user_input), 16))
-            # non number entered
-            else:
-                user_input = raw_input(instructions("base_ten"))
 
             # rinse and repeat
             user_input = raw_input(instructions("base_ten"))
