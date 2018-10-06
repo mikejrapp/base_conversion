@@ -1,5 +1,3 @@
-import time
-
 
 def is_number(number):
     # checks if the value is an integer number
